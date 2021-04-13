@@ -1,50 +1,28 @@
 #!/bin/bash
-apt-get update
-apt-get install -y nginx nodejs npm
 
-groupadd node-demo
-useradd -d /app -s /bin/false -g node-demo node-demo
+sudo apt-get install -y git
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+git clone https://github.com/evermanisha/spring-petclinic-rest
 
-mv /tmp/app /app
-chown -R node-demo:node-demo /app
-
-echo 'user www-data;
-worker_processes auto;
-pid /run/nginx.pid;
-
-events {
-        worker_connections 768;
-        # multi_accept on;
-}
-
-http {
-  server {
-    listen 80;
-    location / {
-      proxy_pass http://localhost:3000/;
-      proxy_set_header Host $host;
-      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    }
-  }
-}' > /etc/nginx/nginx.conf
-
-service nginx restart
-
-cd /app
-npm install
-
-echo '[Service]
-ExecStart=/usr/bin/nodejs /app/index.js
-Restart=always
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=node-demo
-User=node-demo
-Group=node-demo
-Environment=NODE_ENV=production
-
-[Install]
-WantedBy=multi-user.target' > /etc/systemd/system/node-demo.service
-
-systemctl enable node-demo
-systemctl start node-demo
+#apt-get update
+#
+#sudo apt-get remove docker docker-engine
+#
+#sudo apt-get install \
+#    apt-transport-https \
+#    ca-certificates \
+#    curl \
+#    software-properties-common
+#
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#sudo apt-key fingerprint 0EBFCD88
+#
+#sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable"
+#sudo apt-get update
+#sudo apt-get -y upgrade
+#sudo apt-get install -y docker-ce
+#
+#sudo groupadd docker
+#sudo usermod -aG docker ubuntu
+#
+#sudo systemctl enable docker
