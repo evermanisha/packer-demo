@@ -1,5 +1,5 @@
 #!/bin/bash
-
+apt-get update
 sudo apt-get install -y git
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 git clone https://github.com/evermanisha/spring-petclinic-rest
