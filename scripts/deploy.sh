@@ -1,12 +1,12 @@
 #!/bin/bash
-sudo -s
+#sudo -s
 apt-get update
 sudo apt-get install -y git
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 git clone https://github.com/evermanisha/spring-petclinic-rest
-sudo apt install maven
-cd spring-petclinic-rest/
-./mvnw spring-boot:run
+#sudo apt install maven
+#cd spring-petclinic-rest/
+#./mvnw spring-boot:run
 #apt-get update
 #
 #sudo apt-get remove docker docker-engine
