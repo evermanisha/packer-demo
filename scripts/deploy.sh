@@ -5,7 +5,9 @@ sudo apt-get install -y git
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 git clone https://github.com/evermanisha/spring-petclinic-rest
 echo "git cloned"
+sudo -s
 sudo apt install maven
+echo "maven installed"
 
 #cd spring-petclinic-rest/
 #./mvnw spring-boot:run
