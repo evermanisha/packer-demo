@@ -3,7 +3,6 @@
 sudo apt-get install -y git
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 git clone https://github.com/evermanisha/spring-petclinic-rest
-sudo -s
 sudo apt install maven
 cd spring-petclinic-rest/
 ./mvnw spring-boot:run
