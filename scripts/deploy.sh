@@ -3,7 +3,8 @@
 apt-get update
 sudo apt-get install -y git
 ssh-keyscan github.com >> ~/.ssh/known_hosts
-git clone https://github.com/evermanisha/spring-petclinic-rest
+sudo apt install -y maven
+sudo apt install openjdk-11-jdk-headless
 
 
 #cd spring-petclinic-rest/
