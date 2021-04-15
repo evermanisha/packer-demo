@@ -12,7 +12,7 @@ cd spring-petclinic-rest/
 mvn install
 cd target
 
-java -jar spring-petclinic-rest-2.4.2.jar
+#java -jar spring-petclinic-rest-2.4.2.jar
 
 
 
