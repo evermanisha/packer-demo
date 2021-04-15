@@ -6,6 +6,13 @@ ssh-keyscan github.com >> ~/.ssh/known_hosts
 sudo apt install -y maven
 sudo apt install openjdk-11-jdk-headless
 
+git clone https://github.com/evermanisha/spring-petclinic-rest
+
+cd spring-petclinic-rest/
+mvn install
+cd target
+java -jar spring-petclinic-rest-2.4.2.jar
+
 
 #cd spring-petclinic-rest/
 #./mvnw spring-boot:run
